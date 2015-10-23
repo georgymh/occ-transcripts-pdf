@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OCC Unofficial Transcripts PDF Generator</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="row form-container">
+		  <div class="col-md-4 col-md-offset-4">
+			<form id="transcripts-form">
+			  <div id="alert-box" class="alert alert-danger" role="alert" style="display:none"></div>
+			  <div class="form-group">
+			    <label for="user">MyOCC Username</label>
+			    <input class="form-control" id="user" placeholder="Username">
+			  </div>
+			  <div class="form-group">
+			    <label for="pass">MyOCC Password</label>
+			    <input type="password" class="form-control" id="pass" placeholder="Password">
+			  </div>
+			  <div class="checkbox">
+			    <label>
+			      <input id="allow" type="checkbox"> I allow this service to access my unofficial transcripts <b>once</b>.
+			    </label>
+			  </div>
+			  <div class="row text-center">
+			  	<button id='generate' type="submit" class="btn btn-primary btn-lg">Generate Transcripts! <i id="spinner" class="fa fa-spinner fa-spin" style="display:none"></i></button>
+			  </div>
+			</form>
+
+			<form id="download-transcripts" method="POST" action="pdfMyTranscripts.php" style="display:none">
+			  <div class="row text-center">
+			  	<textarea id="html" name="html" style="display:none"></textarea>
+			  	<button type="submit" class="btn btn-success btn-lg">Download My Transcripts</button>
+			  </div>
+			</form>
+		  </div>
+		</div>
+
+		<!-- Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+
+</html>
