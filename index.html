@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>OCC Unofficial Transcripts</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<style>
+			.form-container {
+				padding-top: 150px;
+			}
+		</style>
+	</head>
+
+	<body>
+		 
+
+		<div class="row form-container">
+		  <div class="col-md-4 col-md-offset-4">
+
+			<form id="transcripts-form">
+
+			  <div class="form-group">
+			    <label for="username">MyOCC Username</label>
+			    <input type="email" class="form-control" id="username" placeholder="Username">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="password">MyOCC Password</label>
+			    <input type="password" class="form-control" id="password" placeholder="Password">
+			  </div>
+
+			  <div class="checkbox">
+			    <label>
+			      <input id="allow" type="checkbox"> I allow this service to access my unofficial transcripts <b>once</b>.
+			    </label>
+			  </div>
+
+			  <div class="row text-center">
+			  	<button id='generate' type="submit" class="btn btn-primary btn-lg">Generate Transcripts!</button>
+			  </div>
+
+			</form>
+
+			<form id="download-transcripts" style="display:none">
+			  <div class="row text-center">
+			  	<button type="submit" class="btn btn-success btn-lg">Download My Transcripts</button>
+			  </div>
+			</form>
+
+		  </div>
+		</div>
+
+		<!-- Scripts -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+		<script>
+
+			$('#transcripts-form').on('submit', function(e) {
+				e.preventDefault();
+				
+				// Check if username and password are correct and if login to MyOCC was successful.
+				// In case it was successful...
+				showDownloadButton();
+
+			});
+
+			$('#download-transcripts').on('submit', function(e) {
+				e.preventDefault();
+
+				// Download the transcripts...
+			});
+
+			function showDownloadButton() {
+				// Hide form and show download button.
+				$('#transcripts-form').fadeOut(function() {
+					$('#download-transcripts').fadeIn();
+				});
+			}
+
+
+		</script>
+	
+
+	</body>
+
+
+</html>
+
