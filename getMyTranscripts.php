@@ -17,7 +17,7 @@ if ( isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['action']) )
 }
 
 // 0. Set the cookie file.
-$cookie_file_path = "cookie.txt";
+$cookie_file_path = "/dev/null";
 
 // 1.a. Log into MyCoast.
 
