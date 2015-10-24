@@ -17,7 +17,9 @@ if ( isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['action']) )
 }
 
 // 0. Set the cookie file.
-$milliseconds = round(microtime(true) * 1000) + 5000 + rand(1000, 5000); // + 5 seconds + 1-5 seconds
+$milliseconds = round(microtime(true) * 1000);
+$milliseconds += rand(1, 10000);
+$milliseconds = number_format($milliseconds, 0, '', '');
 $cookie_file_path = "cookies/$milliseconds.txt";
 $cookie_file = fopen($cookie_file_path, "w");
 
