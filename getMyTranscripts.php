@@ -17,12 +17,13 @@ if ( isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['action']) )
 }
 
 // 0. Set the cookie file.
-$cookie_file_path = "/dev/null";
+$milliseconds = round(microtime(true) * 1000) + 5000 + rand(1000, 5000); // + 5 seconds + 1-5 seconds
+$cookie_file_path = "cookies/$milliseconds.txt";
+$cookie_file = fopen($cookie_file_path, "w");
 
 // 1.a. Log into MyCoast.
 
 // Set up POST info with Milliseconds.
-$milliseconds = round(microtime(true) * 1000) + 5000; // + 5 seconds
 $postinfo = "user=".$username."&pass=".$password."&uuid=".$milliseconds;
 
 // Perform the curl request.
@@ -198,6 +199,9 @@ curl_setopt($c, CURLOPT_POST, 1);
 curl_setopt($c, CURLOPT_POSTFIELDS, $transcriptPostinfo);
 $transcriptsHTML = curl_exec($c);
 curl_close($c);
+
+// Close the cookie file.
+fclose($cookie_file);
 
 // 5. Post-process the Transcripts.
 
