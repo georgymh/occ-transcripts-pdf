@@ -15,7 +15,13 @@ if (isset($_POST["html"])) {
 	$dompdf = new DOMPDF();
 	$dompdf->load_html($html);
 	$dompdf->render();
-	$dompdf->stream("transcripts.pdf");	
+
+  $options = array(
+    'compress' => 1,
+    'Attachment' => 1
+  );
+
+	$dompdf->stream("transcripts.pdf");
 }
 
 ?>
