@@ -177,6 +177,11 @@ $transcriptsHTML = str_replace('&amp;nbsp', '', $transcriptsHTML);
 $styleFix = "<style>a { margin-left: 15px; } .captiontext { margin-top: 0 !important; } .ddseparator { padding: 0 }</style>";
 $transcriptsHTML = $styleFix . $transcriptsHTML;
 
+// 5.f. Add some credits.
+$transcriptsHTML = str_replace("2015 Ellucian Company L.P. and its affiliates.",
+                   "<center>Transcripts generated with <b>Easy OCC Transcripts</b>. A creation of Georgy Marrero and Linda Lam.</center>",
+                   $transcriptsHTML);
+
 // 6. Return back (print) the transcripts.
 echo $transcriptsHTML;
 
