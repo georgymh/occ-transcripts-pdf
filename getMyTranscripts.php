@@ -140,11 +140,41 @@ if(@$dom->loadHTML($transcriptsHTML))
 	$transcriptsHTML = $dom->saveHTML();
 }
 
+$start = strpos($transcriptsHTML, '<a href="#insti_credit">Institution Credit</a>');
+$end = strpos($transcriptsHTML, '<table class="datadisplaytable"');
+for ($i = $start; $i < $end; $i++) {
+  $transcriptsHTML[$i] = ' ';
+}
+
+$start = strpos($transcriptsHTML, '<div class="pagefooterdiv">');
+$end = strpos($transcriptsHTML, '<div class="banner_copyright">');
+for ($i = $start; $i < $end; $i++) {
+  $transcriptsHTML[$i] = ' ';
+}
+
+$start = strpos($transcriptsHTML, '<a href="#top" alt="TOP">-Top-</a>');
+$end = $start + 34;
+for ($i = $start; $i < $end; $i++) {
+  $transcriptsHTML[$i] = ' ';
+}
+
+$start = strpos($transcriptsHTML, '<a href="#top" alt="TOP">-Top-</a>');
+$end = $start + 34;
+for ($i = $start; $i < $end; $i++) {
+  $transcriptsHTML[$i] = ' ';
+}
+
+$start = strpos($transcriptsHTML, '<a href="#top" alt="TOP">-Top-</a>');
+$end = $start + 34;
+for ($i = $start; $i < $end; $i++) {
+  $transcriptsHTML[$i] = ' ';
+}
+
 // 5.d. Get rid of encoded characters.
 $transcriptsHTML = str_replace('&amp;nbsp', '', $transcriptsHTML);
 
-// 5.e. Add a style fix (CSS). 
-$styleFix = "<style>a { margin-left: 15px; }</style>";
+// 5.e. Add a style fix (CSS).
+$styleFix = "<style>a { margin-left: 15px; } .captiontext { margin-top: 0 !important; } .ddseparator { padding: 0 }</style>";
 $transcriptsHTML = $styleFix . $transcriptsHTML;
 
 // 6. Return back (print) the transcripts.
