@@ -10,19 +10,19 @@
 
 - Most of the computers on campus are unable to properly format the documents for printing, and often produce incomplete or blank pages due to irregular framing.
 
-**Easy OCC Transcripts** solves all of these problems and makes printing students transcripts an easy process.
+**Easy OCC Transcripts** solves all of these problems and makes printing students' transcripts an easy process.
 
 ##How It Works
 
-1. A student types and submits their student portal *username* and *password*
+1. A student types and submits their *username* and *password*
 
-1. The credentials are used to replicate a login action into the student portal
+1. The credentials are used to replicate a login action through the student portal
 
-1. Logged in, the script traverses up to the transcript page and requests the transcripts in HTML format
+1. Once the user is logged in, the script navigates to the transcripts page and requests it in HTML format
 
-1. The HTML is parsed, cleaned up, and slightly modified
+1. The HTML is parsed, cleaned up, and slightly modified to make it look better
 
-1. A PDF is generated from the HTML and offered as a download
+1. A PDF is generated (in memory) from the HTML and offered as a download to the student
 
 
 ##What Is Used
