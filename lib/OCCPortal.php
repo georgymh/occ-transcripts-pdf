@@ -1,6 +1,6 @@
 <?php
 
-include "../vendor/autoload.php";
+include __DIR__ . "/../vendor/autoload.php";
 
 require_once "SchoolPortal.php";
 require_once "OCCTranscripts.php";
@@ -12,7 +12,7 @@ class OCCPortal extends SchoolPortal
     function __construct()
     {
         $randomStr = random_str(8); // generate 8 characters random string
-        $this->cookiesPath = "../cookies/" . $randomStr . ".txt";
+        $this->cookiesPath = __DIR__ . "/../cookies/" . $randomStr . ".txt";
         $cookiesFile = fopen($this->cookiesPath, "w+");
         fclose($cookiesFile);
     }
