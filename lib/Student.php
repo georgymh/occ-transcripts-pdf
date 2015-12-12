@@ -3,12 +3,13 @@
 class Student
 {
 
-    function __construct($schoolConnection)
     /**
      *  Constructor.
+     *  @param SchoolPortal - the school the user wants to connect to
      */
+    function __construct($schoolPortal)
     {
-        $this->schoolConnection = $schoolConnection;
+        $this->schoolPortal = $schoolPortal;
     }
 
     /**
@@ -35,8 +36,8 @@ class Student
      */
     function getTranscript()
     {
-        if($this->schoolConnection->connect($this->username, $this->password)) {
-            $transcripts = $this->schoolConnection->getTranscripts();
+        if($this->schoolPortal->connect($this->username, $this->password)) {
+            $transcripts = $this->schoolPortal->getTranscripts();
             return $transcripts;
         }
 
@@ -67,7 +68,7 @@ class Student
 
     /**
      *   The school the user wants to connect to.
-     *   @var SchoolConnection
+     *   @var SchoolPortal
      */
-    private $schoolConnection;
+    private $schoolPortal;
 };

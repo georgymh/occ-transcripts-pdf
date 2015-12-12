@@ -2,10 +2,11 @@
 
 include "../vendor/autoload.php";
 
+require_once "SchoolPortal.php";
 require_once "OCCTranscripts.php";
 require_once "HTTPRequest.php";
 
-class OCCPortal
+class OCCPortal extends SchoolPortal
 {
 
     function __construct()
