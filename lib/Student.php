@@ -4,20 +4,35 @@ class Student
 {
 
     function __construct($schoolConnection)
+    /**
+     *  Constructor.
+     */
     {
         $this->schoolConnection = $schoolConnection;
     }
 
+    /**
+     *  Sets the username of the user.
+     *  @param string
+     */
     function setUsername($newUsername)
     {
         $this->username = $newUsername;
     }
 
+    /**
+     *  Sets the password of the user.
+     *  @param string
+     */
     function setPassword($newPassword)
     {
         $this->password = $newPassword;
     }
 
+    /**
+     *  Returns the transcript of the user.
+     *  @return string
+     */
     function getTranscript()
     {
         if($this->schoolConnection->connect($this->username, $this->password)) {
@@ -28,6 +43,10 @@ class Student
         return null;
     }
 
+    /**
+     *  Returns the username of the current user.
+     *  @return string
+     */
     function getUsername()
     {
         return $this->username;
@@ -41,7 +60,7 @@ class Student
 
     /**
      *   The password of the user logged into OCC.
-     *   Read-only.
+     *   Write-only.
      *   @var string
      */
     private $password;

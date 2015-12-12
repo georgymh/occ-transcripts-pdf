@@ -4,6 +4,10 @@ require_once "HTTPRequest.php";
 
 class OCCTranscripts {
 
+    /**
+     *  Constructor.
+     *  @param string cookiesPath - path to cookie file with logged in user
+     */
     function __construct($cookiesPath)
     {
         $this->cookiesPath = $cookiesPath;
