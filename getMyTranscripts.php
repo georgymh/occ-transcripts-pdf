@@ -22,6 +22,8 @@ $milliseconds += rand(1, 10000);
 $milliseconds = number_format($milliseconds, 0, '', '');
 $cookie_file_path = "cookies/$milliseconds.txt";
 $cookie_file = fopen($cookie_file_path, "w");
+// Close the cookie file.
+fclose($cookie_file);
 
 // 1.a. Log into MyCoast.
 
@@ -101,9 +103,6 @@ $options['post'] = $transcriptPostInfo;
 $options['follow_location'] = false;
 $data = performRequest($url, $cookie_file_path, $options);
 $transcriptsHTML = $data['response'];
-
-// Close the cookie file.
-fclose($cookie_file);
 
 // 5. Post-process the Transcripts.
 
