@@ -12,7 +12,7 @@ $('#transcripts-form').on('submit', function(e) {
 
   $.ajax({
     method: "POST",
-    url: "getMyTranscripts.php",
+    url: "actions/getMyTranscripts.php",
     data: {
       user: $('#user').val(),
       pass: $('#pass').val(),

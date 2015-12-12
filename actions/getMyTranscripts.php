@@ -17,8 +17,8 @@ if ( isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['action']) )
 }
 
 // Now, go ahead and generate the transcripts.
-include "lib/OCCPortal.php";
-include "lib/Student.php";
+include "../lib/OCCPortal.php";
+include "../lib/Student.php";
 
 $myOCC = new OCCPortal();
 $student = new Student($myOCC);
