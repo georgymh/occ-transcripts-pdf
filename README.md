@@ -2,15 +2,13 @@
 
 ##Why This Exist
 
-- Unofficial transcripts are often required as part of an internship or scholarship application for students. 
+**The ability to print or download the unofficial transcripts is not an easy task and often requires staff assistance.**
 
-- Students are often asked to bring a copy to their meetings with academic counselors as well. 
+The majority of the time, students at Orange Coast College struggle to print or download their transcripts, resulting on delayed academic counselors meetings, missed internships applications, and failure to address important scholarships requirements.*
 
-- Although accessing unofficial transcripts through the school portal can be simple, the ability to print or download the document not as easy. 
+As a solution, **Easy OCC Transcripts** was created as an *open source* and *free* software for our students to print their transcripts without any hassle.
 
-- Most of the computers on campus are unable to properly format the documents for printing, and often produce incomplete or blank pages due to irregular framing.
-
-**Easy OCC Transcripts** solves all of these problems and makes printing students' transcripts an easy process.
+*The reason why this happens is because modern web browsers are unable to properly format and render the document for printing due to irregular framing.
 
 ##How It Works
 
