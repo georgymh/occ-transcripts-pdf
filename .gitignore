@@ -42,7 +42,6 @@ Thumbs.db
 vendor/
 /vendor
 composer.phar
-composer.lock
 
 # Extra #
 #########
