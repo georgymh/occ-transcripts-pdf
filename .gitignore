@@ -47,5 +47,3 @@ composer.lock
 # Extra #
 #########
 tmp/
-
-composer.lock
