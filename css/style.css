@@ -1,7 +1,65 @@
+html,body{
+  height:100vh;
+  overflow:hidden;
+  color:#fff;
+  background-color:#F7923A
+}
+
 .form-container {
   padding-top: 150px;
 }
 
 #spinner {
   padding-left: 8px;
+}
+
+.site-icon-container{
+  text-align:center;
+}
+
+.site-icon{
+  font-size:75px;
+  color:#132b60;
+}
+
+.btn-generate{
+  background-color:#132b60;
+  color:#fff;
+  border-radius:0;
+  border-color:none;
+}
+
+/* visited link */
+.btn-generate:visited,.btn-generate:focus{
+  background-color:#132b60;
+  color:#fff;
+  border-radius:0;
+  border-color:none;
+}
+
+/* mouse over link */
+.btn-generate:hover {
+  background-color:inherit;
+  color:#132b60;
+  border-color:#132b60;
+  border-radius:0;
+  border-color:none;
+}
+
+/* selected link */
+.btn-generate:active {
+    color: #fff;
+}
+
+.input-fix{
+  border-radius:0;
+}
+.important-text{
+  color:#132b60;
+}
+.banner{
+  font-size:30px;
+}
+.body-text{
+  color:#fff;
 }

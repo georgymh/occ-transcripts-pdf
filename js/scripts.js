@@ -1,3 +1,4 @@
+/*eslint-env jquery */
 $('input#allow').on('click', function() {
   $('.checkbox').css('color', 'black');
 });

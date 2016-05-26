@@ -8,37 +8,69 @@
 	</head>
 
 	<body>
-		<div class="row form-container">
-		  <div class="col-md-4 col-md-offset-4">
-			<form id="transcripts-form">
-			  <div id="alert-box" class="alert alert-danger" role="alert" style="display:none"></div>
-			  <div class="form-group">
-			    <label for="user">MyOCC Username</label>
-			    <input class="form-control" id="user" placeholder="Username">
-			  </div>
-			  <div class="form-group">
-			    <label for="pass">MyOCC Password</label>
-			    <input type="password" class="form-control" id="pass" placeholder="Password">
-			  </div>
+     <!-- start of  page -->
+     <div class="container">
+       <div class="row">
+         <div class="col-sm-12">
+          <div class="form-container">
+		 	  <div class="col-sm-4 col-sm-offset-4">
+             <div class="site-icon-container">
+               <div class="row">
+                   <div class="banner">
+                   <p>
+                     <b class="important-text">OCC-Transcript-Generator</b>
+                   </p>
+                  </div>
+               </div>
+            <div class="row">
+                <i class="site-icon fa fa-file-pdf-o" aria-hidden="true"></i>
+               </div>
+             </div>
+            <form id="transcripts-form">
+               <div id="alert-box" class="alert alert-danger" role="alert" style="display:none"></div>
+               <div class="form-group">
+                 <label for="user">MyOCC Username</label>
+                 <div class="input-group">
+                   <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                   <input class="form-control input-fix" id="user" placeholder="Username">
+                 </div>
+                
+               </div>
+               <div class="form-group">
+                 <label for="pass">MyOCC Password</label>
+                  <div class="input-group">
+                   <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                 <input type="password" class="form-control input-fix" id="pass" placeholder="Password">
+                 </div>
+               </div>
 
-			  <div class="checkbox">
-			    <label>
-			      <input id="allow" type="checkbox"> I allow this service to access my unofficial transcripts <b>just this time</b>.
-			    </label>
-			  </div>
-			  <div class="row text-center">
-			  	<button id='generate' type="submit" class="btn btn-primary btn-lg">Generate Transcripts! <i id="spinner" class="fa fa-spinner fa-spin" style="display:none"></i></button>
-			  </div>
-			</form>
+               <div class="checkbox">
+                 <label><!--I allow this service to access my unofficial transcripts <b class="important-text">just this time</b>. -->
+                   <input id="allow" type="checkbox">
+                   <p class="body-text">
+                    Checking this box allows our service to generate your unofficial transcripts.
+                    We will <b class="important-text">NEVER</b> store  your username or password.
+                   </p>
+                 </label>
+               </div>
+               <div class="row text-center">
+                <button id='generate' type="submit" class="btn btn-generate btn-lg">Generate Transcripts! <i id="spinner" class="fa fa-spinner fa-spin" style="display:none"></i></button>
+               </div>
+           </form>
 
-			<form id="download-transcripts" method="POST" action="actions/pdfMyTranscripts.php" style="display:none">
-			  <div class="row text-center">
-			  	<textarea id="html" name="html" style="display:none"></textarea>
-			  	<button type="submit" class="btn btn-success btn-lg">Download My Transcripts</button>
-			  </div>
-			</form>
-		  </div>
+           <form id="download-transcripts" method="POST" action="actions/pdfMyTranscripts.php" style="display:none">
+             <div class="row text-center">
+              <textarea id="html" name="html" style="display:none"></textarea>
+              <button type="submit" class="btn btn-success btn-lg">Download My Transcripts</button>
+             </div>
+           </form>
+         </div>
 		</div>
+         </div>
+       </div>
+     </div>
+     <!-- end of page -->
+		
 
 		<!-- Scripts -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
