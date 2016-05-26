@@ -22,6 +22,10 @@ html,body{
   color:#132b60;
 }
 
+.pad-top {
+  margin-top: 20px;
+}
+
 .btn-generate{
   background-color:#132b60;
   color:#fff;
