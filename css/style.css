@@ -1,69 +1,103 @@
-html,body{
-  height:100vh;
-  overflow:hidden;
-  color:#fff;
-  background-color:#F7923A
+html,body {
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+    background-color: #132b60;
 }
 
-.form-container {
-  padding-top: 150px;
-}
-
-#spinner {
-  padding-left: 8px;
-}
-
-.site-icon-container{
-  text-align:center;
-}
-
-.site-icon{
-  font-size:75px;
-  color:#132b60;
+.pad-top-lg {
+    margin-top: 60px;
 }
 
 .pad-top {
-  margin-top: 20px;
+    margin-top: 40px;
 }
 
-.btn-generate{
-  background-color:#132b60;
-  color:#fff;
-  border-radius:0;
-  border-color:none;
+.pad-top-sm {
+    margin-top: 20px;
 }
 
-/* visited link */
-.btn-generate:visited,.btn-generate:focus{
-  background-color:#132b60;
-  color:#fff;
-  border-radius:0;
-  border-color:none;
+.pad-top-xs {
+    margin-top: 10px;
 }
 
-/* mouse over link */
-.btn-generate:hover {
-  background-color:inherit;
-  color:#132b60;
-  border-color:#132b60;
-  border-radius:0;
-  border-color:none;
+.form-container {
+    padding-top: 150px;
 }
 
-/* selected link */
-.btn-generate:active {
+#spinner {
+    padding-left: 8px;
+}
+
+.site-icon-container {
+    text-align: center;
+}
+
+.site-icon {
+    font-size: 75px;
+    color: #F7923A;
+}
+
+.pad-top {
+    margin-top: 20px;
+}
+
+.btn-generate {
+    background-color: #F7923A;
+    color: #fff;
+    border-radius: 1px;
+}
+
+.btn-generate:hover,.btn-generate:active,.btn-generate:visited,.btn-generate:focus {
+    background-color: #fba254;
     color: #fff;
 }
 
-.input-fix{
-  border-radius:0;
+.btn-download {
+    background-color: #F7923A;
+    color: #fff;
+    border-radius: 1px;
 }
-.important-text{
-  color:#132b60;
+
+.btn-download:hover,.btn-download:active,.btn-download:visited,.btn-download:focus {
+    background-color: #fba254;
+    color: #fff;
 }
-.banner{
-  font-size:30px;
+
+.input-fix {
+    border-radius: 0;
 }
-.body-text{
-  color:#fff;
+
+.title-text,.important-text {
+    color: #F7923A;
+}
+
+.banner {
+    font-size: 30px;
+}
+
+.body-text {
+    color: #fff;
+}
+
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake{
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 0.35s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in-out;
 }

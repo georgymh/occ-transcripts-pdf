@@ -1,13 +1,14 @@
 /*eslint-env jquery */
-$('input#allow').on('click', function() {
-  $('.checkbox').css('color', 'black');
-});
-
 $('#transcripts-form').on('submit', function(e) {
   e.preventDefault();
 
   if (! $('input#allow').is(':checked')) {
-    $('.checkbox').css('color', '#A52F2D');
+    $('#allow-text').addClass('shake');
+
+    setTimeout(() => {
+      $('#allow-text').removeClass('shake');
+    }, 500);
+
     return false;
   }
 
