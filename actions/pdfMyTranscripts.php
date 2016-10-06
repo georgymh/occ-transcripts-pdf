@@ -8,7 +8,7 @@ define('DOMPDF_ENABLE_AUTOLOAD', false);
 // include DOMPDF's default configuration
 require_once '../vendor/dompdf/dompdf/dompdf_config.inc.php';
 
-// BODY
+
 if (isset($_POST["html"])) {
 	$html = $_POST["html"];
 
@@ -16,10 +16,10 @@ if (isset($_POST["html"])) {
 	$dompdf->load_html($html);
 	$dompdf->render();
 
-  $options = array(
-    'compress' => 1,
-    'Attachment' => 1
-  );
+	$options = array(
+		'compress' => 1,
+		'Attachment' => 1
+	);
 
 	$dompdf->stream("transcripts.pdf");
 }
