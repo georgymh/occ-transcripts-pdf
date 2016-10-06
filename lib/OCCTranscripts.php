@@ -68,13 +68,17 @@ class OCCTranscripts {
         ];
 
         // 1. Access Unofficial Transcript Term Selector.
-        $url = 'https://mycoast.cccd.edu/cp/render.UserLayoutRootNode.uP?uP_tparam=utf&utf=https%3A%2F%2Fmycoast.cccd.edu%2Fcp%2Fip%2Flogin%3Fsys%3Dsctssb%26url%3Dhttps%3A%2F%2Fbannerlsp.cccd.edu%2Fpls%2FPROD%2Fbwskotrn.P_ViewTermTran';
+        $url = 'https://mycoast.cccd.edu/cp/render.UserLayoutRootNode.uP?' +
+        'uP_tparam=utf&utf=https%3A%2F%2Fmycoast.cccd.edu%2Fcp%2Fip%2Flogin' +
+        '%3Fsys%3Dsctssb%26url%3Dhttps%3A%2F%2Fbannerlsp.cccd.edu%2Fpls%2FP' +
+        'ROD%2Fbwskotrn.P_ViewTermTran';
 
         $data = performRequest($url, $this->cookiesPath, $options);
 
         // 2. Access Unofficial Transcript Term Selector.
         // Curl request.
-        $url = 'https://mycoast.cccd.edu/cp/ip/login?sys=sctssb&url=https://bannerlsp.cccd.edu/pls/PROD/bwskotrn.P_ViewTermTran';
+        $url = 'https://mycoast.cccd.edu/cp/ip/login?sys=sctssb&url=https://' +
+        'bannerlsp.cccd.edu/pls/PROD/bwskotrn.P_ViewTermTran';
 
         $options['header'] = true;
         $data = performRequest($url, $this->cookiesPath, $options); // we could follow_location,
@@ -105,6 +109,8 @@ class OCCTranscripts {
 
     /**
      *  Cleans up the transcripts HTML.
+     *  This function will do some manual parsing on the HTML transcript file, to make things look right
+     *  for the user.
      *  NOTE: this function is currently very unefficient -- it has to be fixed soon.
      */
     private function cleanUp()
@@ -160,30 +166,21 @@ class OCCTranscripts {
         for ($i = $start; $i < $end; $i++) {
             $this->transcriptsHTML[$i] = ' ';
         }
-
-        $start = strpos($this->transcriptsHTML, '<a href="#top" alt="TOP">-Top-</a>');
-        $end = $start + 34;
-        for ($i = $start; $i < $end; $i++) {
-            $this->transcriptsHTML[$i] = ' ';
-        }
-
-        $start = strpos($this->transcriptsHTML, '<a href="#top" alt="TOP">-Top-</a>');
-        $end = $start + 34;
-        for ($i = $start; $i < $end; $i++) {
-            $this->transcriptsHTML[$i] = ' ';
-        }
-
-        $start = strpos($this->transcriptsHTML, '<a href="#top" alt="TOP">-Top-</a>');
-        $end = $start + 34;
-        for ($i = $start; $i < $end; $i++) {
-            $this->transcriptsHTML[$i] = ' ';
+        
+        for ($j = 0; $j < 3; $j++) {
+            $start = strpos($this->transcriptsHTML, '<a href="#top" alt="TOP">-Top-</a>');
+            $end = $start + 34;
+            for ($i = $start; $i < $end; $i++) {
+                $this->transcriptsHTML[$i] = ' ';
+            }
         }
 
         // 4. Get rid of encoded characters.
         $this->transcriptsHTML = str_replace('&amp;nbsp', '', $this->transcriptsHTML);
 
-        // 5. Add a style fix (CSS).
-        $styleFix = "<style>a { margin-left: 15px; } .captiontext { margin-top: 0 !important; } .ddseparator { padding: 0 }</style>";
+        // 5. Add a styling fix (CSS).
+        $styleFix = "<style>a { margin-left: 15px; } .captiontext { margin-top: 0 !important; }" +
+        ".ddseparator { padding: 0 }</style>";
         $this->transcriptsHTML = $styleFix . $this->transcriptsHTML;
 
         // 6. Add some credits.
