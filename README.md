@@ -35,7 +35,7 @@ As a solution, **Easy OCC Transcripts** was created as an *open source* and *fre
 - [jQuery](https://jquery.com/)
 
 
-##Made Possible By
+## Made Possible By
 
 - Georgy Marrero - https://github.com/georgymh
 
