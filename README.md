@@ -1,6 +1,6 @@
 **Easy OCC Transcripts** (live [here](https://mighty-eyrie-49519.herokuapp.com)) is a helpful tool for students at Orange Coast College to access their transcripts. Using a simple two-step process, students can download their unofficial transcripts as a PDF file straight onto their device for printing, saving, or sending as an email attachment.
 
-##Why This Exist
+## Why This Exist
 
 **The ability to print or download the unofficial transcripts is not an easy task and often requires staff assistance.**
 
@@ -10,7 +10,7 @@ As a solution, **Easy OCC Transcripts** was created as an *open source* and *fre
 
 *The reason why this happens is because modern web browsers are unable to properly format and render the document for printing due to irregular framing.
 
-##How It Works
+## How It Works
 
 1. A student types and submits their *username* and *password*
 
@@ -22,8 +22,7 @@ As a solution, **Easy OCC Transcripts** was created as an *open source* and *fre
 
 1. A PDF is generated (in memory) from the HTML and offered as a download to the student
 
-
-##What Is Used
+## What Is Used
 
 - cURL
 
